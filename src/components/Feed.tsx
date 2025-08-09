@@ -166,7 +166,7 @@ export const Feed = ({ currentUser, onLogout }: FeedProps) => {
                 <div className="flex items-center justify-between mb-8 pt-4">
                     <div>
                         <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                            Better Life
+                            Nadan LinkeIn
                         </h1>
                         <p className="text-muted-foreground mt-1 text-sm sm:text-base">
                             Everyone else is amazing!
