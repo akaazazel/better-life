@@ -1,73 +1,65 @@
-# Welcome to your Lovable project
+<img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
-## Project info
+# ["അക്കരെ നിന്നാൽ ഇക്കരെ പച്ച"] 🎯
 
-**URL**: https://lovable.dev/projects/dd2c8e50-f06d-4919-aab7-fd1e68b17c88
+## Basic Details
 
-## How can I edit this code?
+### Team Name: [Pineapple Thottam]
 
-There are several ways of editing your application.
+### Team Members
 
-**Use Lovable**
+-   Team Lead: [Aryadath LS] - [College of Engineering Poonjar]
+-   Member 2: [Akshay CV] - [College of Engineering Poonjar]
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/dd2c8e50-f06d-4919-aab7-fd1e68b17c88) and start prompting.
+### Project Description
 
-Changes made via Lovable will be committed automatically to this repo.
+[ On Nadan LinkedIn, whenever you post your achievements, they somehow get exaggerated in the eyes of everyone else—except you. It’s like living proof of the saying, “The grass is always greener on the other side.” And of course, there’s always that option to share pictures for extra effect.]
 
-**Use your preferred IDE**
+### The Problem (that doesn't exist)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+[Since 95% of people exaggerate their achievements on LinkedIn, we built a site that does it automatically—but with a twist: the exaggeration is visible to everyone except you.]
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### The Solution (that nobody asked for)
 
-Follow these steps:
+[Why work hard when " Nadan LinkedI " can over-exaggerate your posts without any middlemen? The twist—your own posts look normal to you, but everyone else sees them turned up to eleven, and you get to see their feeds equally exaggerated.]
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Technical Details
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Technologies/Components Used
 
-# Step 3: Install the necessary dependencies.
-npm i
+For Software:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+-   [Language Used : TypeScript]
+-   [Frameworks used : React]
+-   [Libraries used]
+-   [Tools used : Loveable & Replit]
 
-**Edit a file directly in GitHub**
+### Project Documentation
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+For Software:
 
-**Use GitHub Codespaces**
+# Screenshots (Add at least 3)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+![Screenshot1](public/screenshots/img1.png)
+Login Page
 
-## What technologies are used for this project?
+![Screenshot1](public/screenshots/img2.png)
+Add posts
 
-This project is built with:
+![Screenshot1](public/screenshots/img3.png)
+Own posts show as normal
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+![Screenshot1](public/screenshots/img4.png)
+Others posts show up exaggerated
 
-## How can I deploy this project?
+## Team Contributions
 
-Simply open [Lovable](https://lovable.dev/projects/dd2c8e50-f06d-4919-aab7-fd1e68b17c88) and click on Share -> Publish.
+-   [Akshay CV]: [Software configuration]
+-   [Aryadath LS]: [Idea & Implementation]
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+Made with ❤ at TinkerHub Useless Projects
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
+![Static Badge](https://img.shields.io/badge/UselessProjects--25-25?link=https%3A%2F%2Fwww.tinkerhub.org%2Fevents%2FQ2Q1TQKX6Q%2FUseless%2520Projects)
