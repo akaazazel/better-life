@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Image as LucideImage, X } from "lucide-react";
+import { Image as LucideImage, X, Plus } from "lucide-react";
 
 interface CreatePostFormProps {
     onPostCreated: () => void;
@@ -16,6 +16,7 @@ export const CreatePostForm = ({
 }: CreatePostFormProps) => {
     const [content, setContent] = useState("");
     const [image, setImage] = useState<string | null>(null);
+    const [isOpen, setIsOpen] = useState(false);
     const { toast } = useToast();
     const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -60,6 +61,7 @@ export const CreatePostForm = ({
             fileInputRef.current.value = "";
         }
         onPostCreated();
+        setIsOpen(false);
 
         toast({
             title: "Post shared!",
@@ -68,68 +70,97 @@ export const CreatePostForm = ({
     };
 
     return (
-        <Card className="mb-6">
-            <CardContent className="pt-6">
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <Textarea
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                        placeholder="What's on your mind? Share your daily moments..."
-                        className="min-h-[100px] resize-none"
-                    />
-                    {image && (
-                        <div className="relative">
-                            <img
-                                src={image}
-                                alt="Preview"
-                                className="rounded-md object-cover w-full max-h-96"
-                            />
-                            <Button
-                                type="button"
-                                variant="destructive"
-                                size="icon"
-                                className="absolute top-2 right-2 h-7 w-7"
-                                onClick={() => {
-                                    setImage(null);
-                                    if (fileInputRef.current) {
-                                        fileInputRef.current.value = "";
-                                    }
-                                }}
-                            >
-                                <X className="h-4 w-4" />
-                            </Button>
-                        </div>
-                    )}
-                    <div className="flex justify-between items-center">
-                        <div className="flex items-center gap-2">
-                            <Button
-                                type="button"
-                                size="icon"
-                                variant="outline"
-                                onClick={() => fileInputRef.current?.click()}
-                            >
-                                <LucideImage className="h-5 w-5" />
-                            </Button>
-                            <input
-                                type="file"
-                                ref={fileInputRef}
-                                onChange={handleImageChange}
-                                accept="image/*"
-                                className="hidden"
-                            />
-                            <span className="text-sm text-muted-foreground">
-                                {content.length}/500 characters
-                            </span>
-                        </div>
-                        <Button
-                            type="submit"
-                            disabled={!content.trim() && !image}
-                        >
-                            Share Post
-                        </Button>
-                    </div>
-                </form>
-            </CardContent>
-        </Card>
+        <>
+            {/* Floating button when closed */}
+            {!isOpen && (
+                <Button
+                    onClick={() => setIsOpen(true)}
+                    className="fixed bottom-4 left-4 rounded-full h-14 w-14 shadow-lg z-50 bg-blue-500 hover:bg-blue-600"
+                >
+                    <Plus className="h-6 w-6 text-white" />
+                </Button>
+            )}
+
+            {/* Form when open */}
+            {isOpen && (
+                <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 z-50">
+                    <Card>
+                        <CardContent className="pt-6">
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                <Textarea
+                                    value={content}
+                                    onChange={(e) => setContent(e.target.value)}
+                                    placeholder="What's on your mind? Share your daily moments..."
+                                    className="min-h-[100px] resize-none"
+                                />
+                                {image && (
+                                    <div className="relative">
+                                        <img
+                                            src={image}
+                                            alt="Preview"
+                                            className="rounded-md object-cover w-full max-h-96"
+                                        />
+                                        <Button
+                                            type="button"
+                                            variant="destructive"
+                                            size="icon"
+                                            className="absolute top-2 right-2 h-7 w-7"
+                                            onClick={() => {
+                                                setImage(null);
+                                                if (fileInputRef.current) {
+                                                    fileInputRef.current.value =
+                                                        "";
+                                                }
+                                            }}
+                                        >
+                                            <X className="h-4 w-4" />
+                                        </Button>
+                                    </div>
+                                )}
+                                <div className="flex justify-between items-center">
+                                    <div className="flex items-center gap-2">
+                                        <Button
+                                            type="button"
+                                            size="icon"
+                                            variant="outline"
+                                            onClick={() =>
+                                                fileInputRef.current?.click()
+                                            }
+                                        >
+                                            <LucideImage className="h-5 w-5" />
+                                        </Button>
+                                        <input
+                                            type="file"
+                                            ref={fileInputRef}
+                                            onChange={handleImageChange}
+                                            accept="image/*"
+                                            className="hidden"
+                                        />
+                                        <span className="text-sm text-muted-foreground">
+                                            {content.length}/500 characters
+                                        </span>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <Button
+                                            type="button"
+                                            variant="outline"
+                                            onClick={() => setIsOpen(false)}
+                                        >
+                                            Cancel
+                                        </Button>
+                                        <Button
+                                            type="submit"
+                                            disabled={!content.trim() && !image}
+                                        >
+                                            Share Post
+                                        </Button>
+                                    </div>
+                                </div>
+                            </form>
+                        </CardContent>
+                    </Card>
+                </div>
+            )}
+        </>
     );
 };
